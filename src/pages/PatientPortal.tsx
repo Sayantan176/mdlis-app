@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAppContext } from '../context/AppContext';
-import { Search, Calendar, Clock, User, HeartPulse, FileText } from 'lucide-react';
+import { Calendar, Clock, User, HeartPulse } from 'lucide-react';
 import { Login } from '../components/Login';
 
 export const PatientPortal = () => {

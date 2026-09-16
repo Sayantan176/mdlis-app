@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Activity, UserCircle, Stethoscope, Pill, Shield, ArrowRight } from 'lucide-react';
 

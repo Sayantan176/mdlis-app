@@ -11,13 +11,13 @@ export const AdminControlCenter = () => {
   const [isAddingDoctor, setIsAddingDoctor] = useState(false);
   const [newDoctor, setNewDoctor] = useState({ name: '', department: '', room: '', credentials: '' });
 
-  const [departments, setDepartments] = useState([
+  const [departments] = useState([
     { id: 'DEP-1', name: 'Cardiology', head: 'Dr. Amitava Dhar', status: 'Active' },
     { id: 'DEP-2', name: 'Neurology', head: 'Dr. Ashoke Basu', status: 'Active' },
     { id: 'DEP-3', name: 'Pediatrics', head: 'Dr. Ashoke Biswas', status: 'Active' },
   ]);
 
-  const [shifts, setShifts] = useState([
+  const [shifts] = useState([
     { id: 'SH-1', doctor: 'Dr. Amitava Dhar', date: '2026-09-17', shift: 'Morning (08:00 - 14:00)' },
     { id: 'SH-2', doctor: 'Dr. Sanjoy Goswami', date: '2026-09-17', shift: 'Evening (14:00 - 20:00)' },
     { id: 'SH-3', doctor: 'Dr. Ashoke Basu', date: '2026-09-18', shift: 'Night (20:00 - 08:00)' },

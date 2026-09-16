@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, type ReactNode } from 'react';
 import { mockPatients, mockDoctors, mockMedications, mockTests, mockAppointments } from '../data/mockData';
 
 type AppContextType = {
@@ -21,7 +21,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [patients, setPatients] = useState(mockPatients);
   const [doctors, setDoctors] = useState(mockDoctors);
   const [medications, setMedications] = useState(mockMedications);
-  const [tests, setTests] = useState(mockTests);
+  const [tests] = useState(mockTests);
   const [appointments, setAppointments] = useState(mockAppointments);
   const [auth, setAuth] = useState({
     patient: false,

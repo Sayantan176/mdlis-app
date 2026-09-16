@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Stethoscope, UserCircle, Pill, Shield, Activity } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
