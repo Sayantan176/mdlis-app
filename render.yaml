@@ -1,0 +1,23 @@
+services:
+  # The Python Backend API
+  - type: web
+    name: mdlis-api
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn server:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+
+  # The React Frontend
+  - type: web
+    name: mdlis-frontend
+    env: static
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: "./dist"
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: mdlis-api
+          envVarKey: RENDER_EXTERNAL_URL

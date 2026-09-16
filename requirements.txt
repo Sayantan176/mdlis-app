@@ -1,0 +1,4 @@
+Flask==3.1.0
+Flask-Cors==6.0.5
+reportlab==5.0.1
+gunicorn==21.2.0

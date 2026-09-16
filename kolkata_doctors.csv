@@ -1,0 +1,218 @@
+Doctor Name,Department,Room No.
+Dr. Ashoke Dutta,Anesthesiology,617
+Dr. Bikramjit Halder,Anesthesiology,119
+Dr. Bishwanath Dey,Anesthesiology,961
+Dr. Dibyendu Barman,Anesthesiology,818
+Dr. Pradip Kar,Anesthesiology,319
+Dr. Sanjoy Kar,Anesthesiology,947
+Dr. Sibaji Bhattacharya,Anesthesiology,558
+Dr. Amitava Dhar,Cardiology,147
+Dr. Amitava Dutta,Cardiology,336
+Dr. Antara Mitra,Cardiology,115
+Dr. Jyotirmoy Ray,Cardiology,366
+Dr. Kakoli Kundu,Cardiology,561
+Dr. Neha Bajoria,Cardiology,444
+Dr. Pooja Shah,Cardiology,781
+Dr. Poulomi Bhattacharya,Cardiology,796
+Dr. Sanjoy Goswami,Cardiology,464
+Dr. Snehasish Mondal,Cardiology,156
+Dr. Vikas Kedia,Cardiology,787
+Dr. Krishnamurthy Rao,Cardiothoracic Surgery,595
+Dr. Nitin Prasad,Cardiothoracic Surgery,847
+Dr. Preeti Srivastava,Cardiothoracic Surgery,332
+Dr. Sandipan Banerjee,Cardiothoracic Surgery,937
+Dr. Saptarshi Dutta,Cardiothoracic Surgery,809
+Dr. Nusrat Ansari,Dentistry,333
+Dr. Payel Palit,Dentistry,213
+Dr. Piyali Sinha,Dentistry,345
+Dr. Saptarshi Bose,Dentistry,461
+Dr. Antara Chakraborty,Dermatology,922
+Dr. Faisal Ansari,Dermatology,451
+Dr. Mahua Kundu,Dermatology,654
+Dr. Manjira Dutta,Dermatology,356
+Dr. Piyali Dhar,Dermatology,390
+Dr. Preeti Mishra,Dermatology,539
+Dr. Sraboni Palit,Dermatology,186
+Dr. Abhijit Bhaduri,ENT,726
+Dr. Saptarshi Maity,ENT,723
+Dr. Subhankar Bhaduri,ENT,716
+Dr. Subrata Sarkar,ENT,436
+Dr. Sunita Bhansali,ENT,749
+Dr. Sutapa Lahiri,ENT,195
+Dr. Vikas Agarwal,ENT,799
+Dr. Aparajita Bagchi,Emergency Medicine,780
+Dr. Arjun Singh,Emergency Medicine,535
+Dr. Ayesha Hossain,Emergency Medicine,954
+Dr. Jasmine Sachdeva,Emergency Medicine,894
+Dr. Manmohan Grover,Emergency Medicine,128
+Dr. Shyamal Bhaduri,Emergency Medicine,836
+Dr. Aniruddha Ghosh,Endocrinology,943
+Dr. Manpreet Grover,Endocrinology,395
+Dr. Piyali Sarkar,Endocrinology,940
+Dr. Rajarshi Dey,Endocrinology,251
+Dr. Sandipan Raha,Endocrinology,217
+Dr. Sourav Bhowmik,Endocrinology,732
+Dr. Anirban Nag,Gastroenterology,245
+Dr. Hiranmoy Talukdar,Gastroenterology,248
+Dr. Nabarun Bagchi,Gastroenterology,162
+Dr. Nabarun Mitra,Gastroenterology,694
+Dr. Payel Sanyal,Gastroenterology,193
+Dr. Rumela Ray,Gastroenterology,418
+Dr. Simran Anand,Gastroenterology,549
+Dr. Sohini Biswas,Gastroenterology,774
+Dr. Anjali Kedia,General Medicine,408
+Dr. Baishali Chaki,General Medicine,991
+Dr. Debolina Bhowmik,General Medicine,983
+Dr. Goutam Mitra,General Medicine,161
+Dr. Jayeeta Pal,General Medicine,202
+Dr. Joydeep Mitra,General Medicine,241
+Dr. Jyotirmoy Bera,General Medicine,289
+Dr. Kamruzzaman Alam,General Medicine,924
+Dr. Manjira Bagchi,General Medicine,882
+Dr. Manpreet Singh,General Medicine,985
+Dr. Rohit Kedia,General Medicine,295
+Dr. Shahnawaz Khan,General Medicine,903
+Dr. Shreya Dutta,General Medicine,491
+Dr. Tarun Basu,General Medicine,919
+Dr. Ananya Chaki,General Surgery,307
+Dr. Arpita Chatterjee,General Surgery,583
+Dr. Debashis Bhowmik,General Surgery,290
+Dr. Dibyendu Talukdar,General Surgery,672
+Dr. Jyotirmoy Sinha,General Surgery,674
+Dr. Kaushik Palit,General Surgery,869
+Dr. Partha Dawn,General Surgery,306
+Dr. Ranadeb Kar,General Surgery,167
+Dr. Sandipan Basu,General Surgery,126
+Dr. Snehasish Dutta,General Surgery,808
+Dr. Nisha Chokhani,Geriatric Medicine,640
+Dr. Pradip Bhaduri,Geriatric Medicine,667
+Dr. Rajarshi Ganguly,Geriatric Medicine,450
+Dr. Saptarshi Bhaduri,Geriatric Medicine,575
+Dr. Anindita Datta,Hematology,750
+Dr. Arjun Sachdeva,Hematology,607
+Dr. Imtiaz Alam,Hematology,875
+Dr. Vikas Todi,Hematology,283
+Dr. Kaushik Chaudhuri,Infectious Diseases,848
+Dr. Mohammad Asif Hossain,Infectious Diseases,350
+Dr. Shabnam Ahmed,Infectious Diseases,842
+Dr. Shreya Datta,Infectious Diseases,458
+Dr. Ashish Agarwal,Neonatology,628
+Dr. Rukhsana Ansari,Neonatology,629
+Dr. Sandipan Kar,Neonatology,441
+Dr. Swati Jain,Neonatology,422
+Dr. Brijesh Sharma,Nephrology,976
+Dr. Jyotirmoy Majumdar,Nephrology,116
+Dr. Praveen Dubey,Nephrology,379
+Dr. Ritika Agarwal,Nephrology,184
+Dr. Saptarshi Ghosh,Nephrology,552
+Dr. Soumitra Das,Nephrology,876
+Dr. Sourav Halder,Nephrology,183
+Dr. Aparajita Goswami,Neurology,635
+Dr. Ashoke Basu,Neurology,246
+Dr. Partha Dey,Neurology,182
+Dr. Partha Samanta,Neurology,426
+Dr. Rakesh Todi,Neurology,715
+Dr. Revathi Iyer,Neurology,433
+Dr. Revathi Shetty,Neurology,419
+Dr. Tathagata Nag,Neurology,881
+Dr. Arnab Pal,Neurosurgery,827
+Dr. Preeti Dubey,Neurosurgery,243
+Dr. Sanchita Das,Neurosurgery,777
+Dr. Soumitra Datta,Neurosurgery,870
+Dr. Utpal Biswas,Neurosurgery,907
+Dr. Abhijit Bose,Obstetrics & Gynecology,541
+Dr. Aniruddha Ray,Obstetrics & Gynecology,648
+Dr. Doyel Sarkar,Obstetrics & Gynecology,973
+Dr. Kiran Sachdeva,Obstetrics & Gynecology,455
+Dr. Mohammad Asif Siddiqui,Obstetrics & Gynecology,892
+Dr. Mukesh Chokhani,Obstetrics & Gynecology,393
+Dr. Paromita Goswami,Obstetrics & Gynecology,425
+Dr. Sanchita Dasgupta,Obstetrics & Gynecology,669
+Dr. Shreya Bhowmik,Obstetrics & Gynecology,208
+Dr. Trina Bagchi,Obstetrics & Gynecology,123
+Dr. Anand Raman,Oncology,713
+Dr. Chiranjib Ghosh,Oncology,831
+Dr. Farhana Rahman,Oncology,389
+Dr. Kaushik Roy,Oncology,887
+Dr. Nabarun Nag,Oncology,198
+Dr. Paromita Sinha,Oncology,718
+Dr. Sabina Ahmed,Oncology,955
+Dr. Ayesha Siddiqui,Ophthalmology,153
+Dr. Debolina Basu,Ophthalmology,806
+Dr. Goutam Chowdhury,Ophthalmology,952
+Dr. Ishita Mitra,Ophthalmology,465
+Dr. Nikhil Mittal,Ophthalmology,347
+Dr. Ranadeb Chowdhury,Ophthalmology,288
+Dr. Rashmi Prasad,Ophthalmology,276
+Dr. Anjali Agarwal,Orthopedics,384
+Dr. Aparajita Biswas,Orthopedics,775
+Dr. Ashoke Halder,Orthopedics,843
+Dr. Chiranjib Saha,Orthopedics,623
+Dr. Manish Chokhani,Orthopedics,555
+Dr. Manmohan Sethi,Orthopedics,572
+Dr. Rumela Palit,Orthopedics,523
+Dr. Sohini Dhar,Orthopedics,525
+Dr. Somnath Lahiri,Orthopedics,244
+Dr. Sunil Shah,Orthopedics,185
+Dr. Urmila Das,Orthopedics,480
+Dr. Chiranjib Mukherjee,Pathology,994
+Dr. Nikhil Mehta,Pathology,939
+Dr. Shobha Subramanian,Pathology,701
+Dr. Sohini Kar,Pathology,495
+Dr. Utpal Kundu,Pathology,684
+Dr. Piyali Bera,Pediatric Surgery,637
+Dr. Sabina Ansari,Pediatric Surgery,139
+Dr. Sandipan Mondal,Pediatric Surgery,644
+Dr. Sandipan Seal,Pediatric Surgery,816
+Dr. Ashoke Biswas,Pediatrics,463
+Dr. Balaji Shetty,Pediatrics,274
+Dr. Chiranjib Ray,Pediatrics,999
+Dr. Dipankar Das,Pediatrics,811
+Dr. Dipankar Raha,Pediatrics,662
+Dr. Kiran Arora,Pediatrics,468
+Dr. Lakshmi Reddy,Pediatrics,434
+Dr. Navjot Singh,Pediatrics,155
+Dr. Shreya Dawn,Pediatrics,371
+Dr. Vaishnavi Iyer,Pediatrics,138
+Dr. Biswajit Sil,Physical Medicine & Rehabilitation,260
+Dr. Nandita Bhowmik,Physical Medicine & Rehabilitation,129
+Dr. Pradip Bera,Physical Medicine & Rehabilitation,693
+Dr. Zubair Iqbal,Physical Medicine & Rehabilitation,855
+Dr. Kaushik Seal,Plastic Surgery,953
+Dr. Moumita Ray,Plastic Surgery,247
+Dr. Swati Saraf,Plastic Surgery,340
+Dr. Tarun Chowdhury,Plastic Surgery,760
+Dr. Anindita Halder,Psychiatry,752
+Dr. Karan Grover,Psychiatry,443
+Dr. Manpreet Bhatia,Psychiatry,647
+Dr. Padmini Pillai,Psychiatry,782
+Dr. Rajinder Anand,Psychiatry,984
+Dr. Sarita Mishra,Psychiatry,845
+Dr. Amitava Rakshit,Pulmonology,505
+Dr. Archana Yadav,Pulmonology,165
+Dr. Arindam Raha,Pulmonology,938
+Dr. Arnab Deb,Pulmonology,649
+Dr. Farhana Iqbal,Pulmonology,643
+Dr. Kaushik Kanjilal,Pulmonology,915
+Dr. Mohan Subramanian,Pulmonology,181
+Dr. Anil Bhansali,Radiology,231
+Dr. Anirban Dasgupta,Radiology,835
+Dr. Ashish Bajoria,Radiology,712
+Dr. Biswajit Rakshit,Radiology,470
+Dr. Bratin Poddar,Radiology,641
+Dr. Saptarshi Majumdar,Radiology,224
+Dr. Sukanta Raha,Radiology,538
+Dr. Ananya Sarkar,Rheumatology,309
+Dr. Bipasha Chowdhury,Rheumatology,106
+Dr. Dipankar Ghosh,Rheumatology,449
+Dr. Vikas Shah,Rheumatology,145
+Dr. Brijesh Pandey,Urology,520
+Dr. Dipankar Chatterjee,Urology,969
+Dr. Manmohan Bhatia,Urology,981
+Dr. Rituparna Paul,Urology,510
+Dr. Rumela Majumdar,Urology,921
+Dr. Sanjay Shah,Urology,522
+Dr. Deepak Shah,Vascular Surgery,609
+Dr. Sanchita Goswami,Vascular Surgery,361
+Dr. Suchismita Dey,Vascular Surgery,327
+Dr. Trina Barman,Vascular Surgery,386
