@@ -11,17 +11,21 @@ export const AdminControlCenter = () => {
   const [isAddingDoctor, setIsAddingDoctor] = useState(false);
   const [newDoctor, setNewDoctor] = useState({ name: '', department: '', room: '', credentials: '' });
 
-  const [departments] = useState([
+  const [departments, setDepartments] = useState([
     { id: 'DEP-1', name: 'Cardiology', head: 'Dr. Amitava Dhar', status: 'Active' },
     { id: 'DEP-2', name: 'Neurology', head: 'Dr. Ashoke Basu', status: 'Active' },
     { id: 'DEP-3', name: 'Pediatrics', head: 'Dr. Ashoke Biswas', status: 'Active' },
   ]);
+  const [isAddingDept, setIsAddingDept] = useState(false);
+  const [newDept, setNewDept] = useState({ name: '', head: '', status: 'Active' });
 
-  const [shifts] = useState([
+  const [shifts, setShifts] = useState([
     { id: 'SH-1', doctor: 'Dr. Amitava Dhar', date: '2026-09-17', shift: 'Morning (08:00 - 14:00)' },
     { id: 'SH-2', doctor: 'Dr. Sanjoy Goswami', date: '2026-09-17', shift: 'Evening (14:00 - 20:00)' },
     { id: 'SH-3', doctor: 'Dr. Ashoke Basu', date: '2026-09-18', shift: 'Night (20:00 - 08:00)' },
   ]);
+  const [isAssigningShift, setIsAssigningShift] = useState(false);
+  const [newShift, setNewShift] = useState({ doctorId: '', date: '', shift: 'Morning (08:00 - 14:00)' });
 
   if (!auth.admin) {
     return (
@@ -50,6 +54,47 @@ export const AdminControlCenter = () => {
 
   const removeDoctor = (id: string) => {
     setDoctors(doctors.filter(d => d.id !== id));
+  };
+
+  const handleAddDept = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newDept.name) return;
+    
+    const dept = {
+      id: `DEP-${Math.floor(100 + Math.random() * 900)}`,
+      ...newDept
+    };
+    
+    setDepartments([...departments, dept]);
+    setNewDept({ name: '', head: '', status: 'Active' });
+    setIsAddingDept(false);
+  };
+
+  const removeDept = (id: string) => {
+    setDepartments(departments.filter(d => d.id !== id));
+  };
+
+  const handleAssignShift = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newShift.doctorId || !newShift.date) return;
+    
+    const doc = doctors.find(d => d.id === newShift.doctorId);
+    if (!doc) return;
+
+    const shift = {
+      id: `SH-${Math.floor(1000 + Math.random() * 9000)}`,
+      doctor: doc.name,
+      date: newShift.date,
+      shift: newShift.shift
+    };
+    
+    setShifts([...shifts, shift]);
+    setNewShift({ doctorId: '', date: '', shift: 'Morning (08:00 - 14:00)' });
+    setIsAssigningShift(false);
+  };
+
+  const removeShift = (id: string) => {
+    setShifts(shifts.filter(s => s.id !== id));
   };
 
   return (
@@ -167,11 +212,39 @@ export const AdminControlCenter = () => {
             <div className="bg-white border border-slate-200">
               <div className="p-4 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
                 <h2 className="text-sm font-medium text-slate-900 uppercase tracking-wider flex items-center"><Settings className="h-4 w-4 mr-2" /> Department Configuration</h2>
-                <button className="flex items-center px-3 py-1.5 bg-slate-900 text-white text-xs font-medium hover:bg-slate-800">
+                <button 
+                  onClick={() => setIsAddingDept(!isAddingDept)}
+                  className="flex items-center px-3 py-1.5 bg-slate-900 text-white text-xs font-medium hover:bg-slate-800"
+                >
                   <Plus className="h-3 w-3 mr-1" />
                   Add Dept
                 </button>
               </div>
+              
+              {isAddingDept && (
+                <div className="p-4 border-b border-slate-200 bg-slate-50/50">
+                  <form onSubmit={handleAddDept} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-medium text-slate-500 uppercase mb-1">Name</label>
+                      <input required type="text" value={newDept.name} onChange={e => setNewDept({...newDept, name: e.target.value})} className="w-full border border-slate-300 px-3 py-1.5 text-sm" placeholder="e.g. Oncology" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-medium text-slate-500 uppercase mb-1">Department Head</label>
+                      <select value={newDept.head} onChange={e => setNewDept({...newDept, head: e.target.value})} className="w-full border border-slate-300 px-3 py-1.5 text-sm bg-white">
+                        <option value="">Select a Doctor</option>
+                        {doctors.map(d => (
+                          <option key={d.id} value={d.name}>{d.name}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="md:col-span-2 flex justify-end space-x-2">
+                      <button type="button" onClick={() => setIsAddingDept(false)} className="px-4 py-1.5 border border-slate-300 text-sm font-medium hover:bg-slate-50">Cancel</button>
+                      <button type="submit" className="px-4 py-1.5 bg-slate-900 text-white text-sm font-medium hover:bg-slate-800">Save</button>
+                    </div>
+                  </form>
+                </div>
+              )}
+
               <table className="min-w-full divide-y divide-slate-200">
                 <thead className="bg-white">
                   <tr>
@@ -179,6 +252,7 @@ export const AdminControlCenter = () => {
                     <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Name</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Department Head</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Status</th>
+                    <th className="px-6 py-3 text-right text-xs font-medium text-slate-500 uppercase tracking-wider">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-slate-200">
@@ -186,9 +260,14 @@ export const AdminControlCenter = () => {
                     <tr key={dept.id} className="hover:bg-slate-50">
                       <td className="px-6 py-3 whitespace-nowrap text-xs font-mono text-slate-500">{dept.id}</td>
                       <td className="px-6 py-3 whitespace-nowrap text-sm font-medium text-slate-900">{dept.name}</td>
-                      <td className="px-6 py-3 whitespace-nowrap text-sm text-slate-900">{dept.head}</td>
+                      <td className="px-6 py-3 whitespace-nowrap text-sm text-slate-900">{dept.head || 'Unassigned'}</td>
                       <td className="px-6 py-3 whitespace-nowrap">
                         <span className="px-2 py-1 inline-flex text-xs leading-5 font-medium bg-green-50 text-green-800 border border-green-200">{dept.status}</span>
+                      </td>
+                      <td className="px-6 py-3 whitespace-nowrap text-right space-x-3">
+                        <button onClick={() => removeDept(dept.id)} className="text-red-400 hover:text-red-700" title="Remove Department">
+                          <Trash2 className="h-4 w-4 inline" />
+                        </button>
                       </td>
                     </tr>
                   ))}
@@ -201,11 +280,47 @@ export const AdminControlCenter = () => {
             <div className="bg-white border border-slate-200">
               <div className="p-4 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
                 <h2 className="text-sm font-medium text-slate-900 uppercase tracking-wider flex items-center"><Clock className="h-4 w-4 mr-2" /> Shift Scheduling</h2>
-                <button className="flex items-center px-3 py-1.5 bg-slate-900 text-white text-xs font-medium hover:bg-slate-800">
+                <button 
+                  onClick={() => setIsAssigningShift(!isAssigningShift)}
+                  className="flex items-center px-3 py-1.5 bg-slate-900 text-white text-xs font-medium hover:bg-slate-800"
+                >
                   <Calendar className="h-3 w-3 mr-1" />
                   Assign Shift
                 </button>
               </div>
+
+              {isAssigningShift && (
+                <div className="p-4 border-b border-slate-200 bg-slate-50/50">
+                  <form onSubmit={handleAssignShift} className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                      <label className="block text-xs font-medium text-slate-500 uppercase mb-1">Doctor</label>
+                      <select required value={newShift.doctorId} onChange={e => setNewShift({...newShift, doctorId: e.target.value})} className="w-full border border-slate-300 px-3 py-1.5 text-sm bg-white">
+                        <option value="">Select a Doctor</option>
+                        {doctors.map(d => (
+                          <option key={d.id} value={d.id}>{d.name}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-xs font-medium text-slate-500 uppercase mb-1">Date</label>
+                      <input required type="date" value={newShift.date} onChange={e => setNewShift({...newShift, date: e.target.value})} className="w-full border border-slate-300 px-3 py-1.5 text-sm" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-medium text-slate-500 uppercase mb-1">Shift</label>
+                      <select required value={newShift.shift} onChange={e => setNewShift({...newShift, shift: e.target.value})} className="w-full border border-slate-300 px-3 py-1.5 text-sm bg-white">
+                        <option value="Morning (08:00 - 14:00)">Morning (08:00 - 14:00)</option>
+                        <option value="Evening (14:00 - 20:00)">Evening (14:00 - 20:00)</option>
+                        <option value="Night (20:00 - 08:00)">Night (20:00 - 08:00)</option>
+                      </select>
+                    </div>
+                    <div className="md:col-span-3 flex justify-end space-x-2">
+                      <button type="button" onClick={() => setIsAssigningShift(false)} className="px-4 py-1.5 border border-slate-300 text-sm font-medium hover:bg-slate-50">Cancel</button>
+                      <button type="submit" className="px-4 py-1.5 bg-slate-900 text-white text-sm font-medium hover:bg-slate-800">Assign</button>
+                    </div>
+                  </form>
+                </div>
+              )}
+
               <table className="min-w-full divide-y divide-slate-200">
                 <thead className="bg-white">
                   <tr>
@@ -213,6 +328,7 @@ export const AdminControlCenter = () => {
                     <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Doctor</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Date</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Time</th>
+                    <th className="px-6 py-3 text-right text-xs font-medium text-slate-500 uppercase tracking-wider">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-slate-200">
@@ -222,6 +338,11 @@ export const AdminControlCenter = () => {
                       <td className="px-6 py-3 whitespace-nowrap text-sm font-medium text-slate-900">{shift.doctor}</td>
                       <td className="px-6 py-3 whitespace-nowrap text-sm text-slate-900">{shift.date}</td>
                       <td className="px-6 py-3 whitespace-nowrap text-sm text-slate-600">{shift.shift}</td>
+                      <td className="px-6 py-3 whitespace-nowrap text-right space-x-3">
+                        <button onClick={() => removeShift(shift.id)} className="text-red-400 hover:text-red-700" title="Remove Shift">
+                          <Trash2 className="h-4 w-4 inline" />
+                        </button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
