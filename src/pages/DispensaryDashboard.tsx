@@ -75,7 +75,8 @@ export const DispensaryDashboard = () => {
 
   const handleExportStock = async () => {
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      // In production (Render), the API is on the same host. In local dev, it's on port 5000.
+      const apiUrl = import.meta.env.PROD ? '' : 'http://localhost:5000';
       const response = await fetch(`${apiUrl}/api/export-stock`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
