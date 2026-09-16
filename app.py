@@ -1,4 +1,5 @@
-from flask import Flask, request, send_file
+import os
+from flask import Flask, request, send_file, send_from_directory
 from flask_cors import CORS
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
@@ -7,8 +8,17 @@ from reportlab.lib.styles import getSampleStyleSheet
 import io
 import datetime
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='dist', static_url_path='')
 CORS(app)
+
+# Serve React App
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    if path != "" and os.path.exists(app.static_folder + '/' + path):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/api/export-stock', methods=['POST'])
 def export_stock():
